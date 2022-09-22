@@ -1,0 +1,73 @@
+.hItem {
+  border: 1px solid lightgray;
+  display: flex;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 30px;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.hContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.hWrapper {
+  width: 100%;
+  max-width: 1024px;
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+}
+
+.hCheckButton {
+  background-color: #c13665;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 5px;
+  font-weight: bold;
+  cursor: pointer;
+  margin: 25px 20px 0 0;
+  width: 100px;
+  display: flex;
+  justify-content: center;
+}
+
+@media screen and (max-width: 991px) {
+  .hWrapper {
+    max-width: 767px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .hWrapper {
+    max-width: 650px;
+  }
+}
+@media screen and (max-width: 650px) {
+  .hWrapper {
+    max-width: 575px;
+  }
+}
+@media screen and (max-width: 650px) {
+  .hItem {
+    flex-direction: column;
+  }
+  .siDetailTexts {
+    text-align: center;
+  }
+  .siDesc {
+    align-items: center;
+  }
+  .hItem {
+    align-items: center;
+  }
+  .siFeatures {
+    text-align: center;
+  }
+  .hCheckButton{
+    margin: 15px auto;
+  }
+}

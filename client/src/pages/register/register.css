@@ -1,0 +1,49 @@
+.register {
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.lInput {
+  height: 30px;
+  padding: 10px;
+}
+
+.lButton {
+  border: none;
+  padding: 10px 20px;
+  background-color: #c13665;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.lButton:disabled {
+  background-color: #c13665;
+  cursor: not-allowed;
+}
+
+.toRegister {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.error {
+  color: #ff0000;
+  text-align: center;
+  font-weight: bold;
+}
+
+.success {
+  color: #008009;
+  text-align: center;
+  font-weight: bold;
+}

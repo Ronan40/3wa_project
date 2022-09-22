@@ -1,0 +1,62 @@
+.navbar {
+  height: 50px;
+  background-color: #f3a28f;
+  display: flex;
+  justify-content: center;
+}
+
+.navContainer {
+  width: 100%;
+  max-width: 1024px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-weight: 500;
+  font-family: 'Trophy', sans-serif;
+  color: #fff;
+  text-decoration: none;
+}
+
+.navButton {
+  margin-left: 20px;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #c13665;
+  background-color: #c13665;
+  color: #fff;
+  cursor: pointer;
+}
+
+.userName{
+  text-transform: capitalize;
+}
+
+@media screen and (max-width: 991px) {
+  .navContainer {
+    max-width: 767px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .navContainer {
+    max-width: 650px;
+  }
+}
+@media screen and (max-width: 651px) {
+  .navContainer {
+    max-width: 575px;
+  }
+}
+@media screen and (max-width: 576px) {
+  .navContainer {
+    max-width: 450px;
+  }
+}
+@media screen and (max-width: 455px) {
+  .navContainer {
+    max-width: 370px;
+  }
+}

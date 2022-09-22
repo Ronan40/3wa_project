@@ -1,0 +1,136 @@
+.searchItem {
+  border: 1px solid lightgray;
+  display: flex;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 30px;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.siImg {
+  height: 200px;
+  width: 200px;
+  border-radius: 5px;
+}
+
+.siDesc {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 2;
+}
+
+.siDetails {
+  flex: 1;
+}
+
+.siTitle{
+    font-size: 20px;
+    color: #c13665;
+}
+
+.siSubtitle{
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.siDistance{
+    font-size: 12px;
+}
+
+.siTaxi{
+    font-size: 12px;
+    background-color: #008009;
+    color: #fff;
+    width: max-content;
+    padding: 3px;
+    border-radius: 5px;
+}
+
+.siFeatures{
+    font-size: 12px;
+    max-height: 140px;
+    overflow: auto;
+}
+
+.siCancel{
+    color: #008009;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.siDetails{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: space-between;
+}
+
+.siCancelTitle{
+    color: #008009;
+    font-size: 12px;
+}
+
+.siRating{
+    display: flex;
+    justify-content: space-between;
+}
+.siRating>span{
+    font-weight: 500;
+}
+.siRating>button{
+    background-color: #c13665;
+    color: #fff;
+    font-weight: bold;
+    padding: 5px;
+    border: none;
+    
+}
+
+.siDetailText{
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.siPrice{
+    font-size: 24px;
+}
+.siTax{
+    font-size: 12px;
+    color: gray;
+}
+
+.siCheckButton{
+    background-color: #c13665;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 650px) {
+    .searchItem {
+      flex-direction: column;
+      align-items: center;
+    }
+    .siDetailTexts {
+      text-align: center;
+    }
+    .siDesc {
+      align-items: center;
+    }
+    .siItem {
+      align-items: center;
+    }
+    .siFeatures {
+      text-align: center;
+    }
+    .siCheckButton{
+      margin: 15px auto;
+    }
+  }

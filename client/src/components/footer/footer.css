@@ -1,0 +1,36 @@
+.footer {
+  width: 100%;
+  max-width: 1024px;
+  font-size: 12px;
+}
+
+@media screen and (max-width: 1200px) {
+  .footer {
+    max-width: 992px;
+  }
+}
+@media screen and (max-width: 991px) {
+  .footer {
+    max-width: 767px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .footer {
+    max-width: 650px;
+  }
+}
+@media screen and (max-width: 651px) {
+  .footer {
+    max-width: 575px;
+  }
+}
+@media screen and (max-width: 576px) {
+  .footer {
+    max-width: 450px;
+  }
+}
+@media screen and (max-width: 455px) {
+  .footer {
+    max-width: 370px;
+  }
+}
