@@ -22,7 +22,7 @@ const PropertyList = () => {
             images.map((image, i) => (
                 
               <div className="pListItem" key={i}>
-                <img src={image} alt="" className="pListImg" />
+                <img src={image} alt="Hotel type" className="pListImg" />
                 <div className="pListTitle">
                   <div className="firstTitle">{data[i]?.type}</div>
                   <div className="subTitle">{data[i]?.count} {data[i]?.type}</div>

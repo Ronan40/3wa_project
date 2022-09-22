@@ -11,12 +11,16 @@
   gap: 10px;
   display: flex;
   flex-direction: column;
+  background-color: #c136651c;
+    border-radius: 5px;
+    padding: 10px;
 }
 
 
 .fpImg{
     width: 100%;
     object-fit: cover;
+    border-radius: 5px;
 }
 
 .fpName{

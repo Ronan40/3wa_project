@@ -92,7 +92,7 @@ const Hotel = () => {
               <div className="sliderWrapper">
                 <img
                   src={data.photos[slideNumber]}
-                  alt=""
+                  alt="hotel"
                   className="sliderImg"
                 />
               </div>
@@ -126,7 +126,7 @@ const Hotel = () => {
                   <img
                     onClick={() => handleOpen(index)}
                     src={photo}
-                    alt=""
+                    alt="hotel"
                     className="hotelImg"
                   />
                 </div>
