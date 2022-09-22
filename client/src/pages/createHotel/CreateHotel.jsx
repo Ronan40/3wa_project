@@ -22,6 +22,8 @@ const CreateHotel = () => {
 
   const { user } = useContext(AuthContext);
 
+  // Handle every hotel value
+
   const handleName = (e) => {
     setName(e.target.value);
     setSubmitted(false);
@@ -54,6 +56,8 @@ const CreateHotel = () => {
     setCheapestPrice(parseInt(e.target.value));
     setSubmitted(false);
   };
+
+  //submit the new hotel
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -101,6 +105,8 @@ const CreateHotel = () => {
     setCheapestPrice("");
   };
 
+  // Show the success message
+
   const successMessage = () => {
     return (
       <div
@@ -113,6 +119,8 @@ const CreateHotel = () => {
       </div>
     );
   };
+
+  // Show the error message
 
   const errorMessage = () => {
     return (

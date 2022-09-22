@@ -31,6 +31,8 @@ const Reserve = ({ setOpen, hotelId }) => {
 
   const alldates = getDatesInRange(dates[0].startDate, dates[0].endDate);
 
+  // Check if it's available
+
   const isAvailable = (roomNumber) => {
     const isFound = roomNumber.unavailableDates.some((date) =>
       alldates.includes(new Date(date).getTime())
@@ -38,6 +40,8 @@ const Reserve = ({ setOpen, hotelId }) => {
 
     return !isFound;
   };
+
+  // Select the room if it's available
 
   const handleSelect = (e) => {
     const checked = e.target.checked;
@@ -50,6 +54,8 @@ const Reserve = ({ setOpen, hotelId }) => {
   };
 
   const navigate = useNavigate();
+
+  // Reserve a room, close the modal and go to the home page
 
   const handleClick = async () => {
     try {

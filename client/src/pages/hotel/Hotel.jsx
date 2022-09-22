@@ -26,10 +26,14 @@ const Hotel = () => {
   const [openModal, setOpenModal] = useState(false);
   const { data, loading } = useFetch(`/hotels/find/${id}`);
 
+  // Open the slide
+
   const handleOpen = (i) => {
     setSlideNumber(i);
     setOpen(true);
   };
+
+  // Handle the slide direction and loop
 
   const handleMove = (direction) => {
     let newSlideNumber;
@@ -45,6 +49,8 @@ const Hotel = () => {
 
   const { dates, options } = useContext(SearchContext);
 
+  // Do the difference in day between two dates
+
   const milliSecondPerDay = 1000 * 60 * 60 * 24;
   function dayDiff(date1, date2) {
     const timeDiff = Math.abs(date2.getTime() - date1.getTime());
@@ -57,6 +63,8 @@ const Hotel = () => {
   const { user } = useContext(AuthContext);
 
   const navigate = useNavigate();
+
+  // Open the reservation modal
 
   const handleClick = () => {
     if (!user) {

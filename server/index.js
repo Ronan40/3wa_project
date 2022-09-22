@@ -2,15 +2,15 @@ import express from "express";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
 import cookieParser from "cookie-parser";
+import cors from "cors";
 import authRoute from "./routes/auth.js";
 import usersRoute from "./routes/users.js";
 import hotelsRoute from "./routes/hotels.js";
 import roomsRoute from "./routes/rooms.js";
-import cors from "cors";
 const app = express();
 dotenv.config();
 
-// Connection à la base MongoDB
+// Connection to MongoDB
 const connect = async () => {
   try {
     await mongoose.connect(process.env.MONGO);
@@ -20,31 +20,16 @@ const connect = async () => {
   }
 };
 
-
 mongoose.connection.on("disconnected", () => {
   console.log("MongoDB disconnected");
 });
 
-/* app.use((req, res, next) => {
-  res.setHeader("Access-Control-Allow-Origin", "*");
-  res.setHeader(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content, Accept, Content-Type, Authorization"
-  );
-  res.setHeader(
-    "Access-Control-Allow-Methods",
-    "GET, POST, PUT, DELETE, PATCH, OPTIONS"
-  );
-  next();
-}); */
-
-
 //Middleware
-const corsOptions ={
-  origin:'http://localhost:3000', 
-  credentials:true,            //access-control-allow-credentials:true
-  optionSuccessStatus:200
-}
+const corsOptions = {
+  origin: "http://localhost:3000",
+  credentials: true, //access-control-allow-credentials:true
+  optionSuccessStatus: 200,
+};
 app.use(cors(corsOptions));
 app.use(cookieParser());
 app.use(express.json());
@@ -65,7 +50,7 @@ app.use((err, req, res, next) => {
   });
 });
 
-//Connection au serveur
+//Connection to server
 app.listen(8800, () => {
   connect();
   console.log("Connected to backend!");

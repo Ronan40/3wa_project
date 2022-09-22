@@ -36,6 +36,7 @@ const Header = ({ type }) => {
 
   const navigate = useNavigate();
 
+  // Increase or decrease the options (room, adult, children)
   const handleOption = (name, operation) => {
     setOptions((prev) => {
       return {
@@ -46,7 +47,8 @@ const Header = ({ type }) => {
   };
 
   const { dispatch } = useContext(SearchContext);
-
+ 
+  // set the search elements and navigate to the hotel list
   const handleSearch = () => {
     dispatch({ type: "NEW_SEARCH", payload: { destination, dates, options } });
     navigate("/hotels", { state: { destination, dates, options } });

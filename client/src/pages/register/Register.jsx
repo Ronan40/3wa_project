@@ -11,6 +11,8 @@ const Register = () => {
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState(false);
 
+  // Handle user property
+
   const handleName = (e) => {
     setUsername(e.target.value);
     setSubmitted(false);
@@ -25,6 +27,8 @@ const Register = () => {
     setPassword(e.target.value);
     setSubmitted(false);
   };
+
+  // Submit a new user
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -46,6 +50,8 @@ const Register = () => {
     }
   };
 
+  // Show the succes message
+
   const successMessage = () => {
     return (
       <div
@@ -58,6 +64,8 @@ const Register = () => {
       </div>
     );
   };
+
+  // Show the error message
 
   const errorMessage = () => {
     return (
@@ -73,6 +81,8 @@ const Register = () => {
   };
 
   const navigate = useNavigate();
+
+  // Navigate to login page
 
   const handleToLogin = () => {
     navigate("/login");

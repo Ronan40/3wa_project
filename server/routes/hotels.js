@@ -9,7 +9,6 @@ import {
   getHotelRooms,
   updateHotel,
 } from "../controllers/hotels.js";
-import Hotel from "../models/Hotel.js";
 
 import { verifyAdmin } from "../utils/verifyToken.js";
 

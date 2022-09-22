@@ -27,29 +27,8 @@ const UpdateHotel = () => {
 
   const navigate = useNavigate();
 
-  const updateItem = async () => {
-    try {
-      axios.put(
-        `http://localhost:8800/api/hotels/${id}`,
-        {
-          name,
-          title,
-          type,
-          city,
-          address,
-          distance,
-          desc,
-          cheapestPrice,
-        },
-        {
-          withCredentials: true,
-        }
-      );
-    } catch (error) {
-      console.log(error.message);
-    }
-    navigate("/handle-hotel");
-  };
+  // Handle every hotel value
+
   const handleName = (e) => {
     setName(e.target.value);
   };
@@ -73,6 +52,32 @@ const UpdateHotel = () => {
   };
   const handleCheapestPrice = (e) => {
     setCheapestPrice(parseInt(e.target.value));
+  };
+
+  // Update hotel values
+
+  const updateItem = async () => {
+    try {
+      axios.put(
+        `http://localhost:8800/api/hotels/${id}`,
+        {
+          name,
+          title,
+          type,
+          city,
+          address,
+          distance,
+          desc,
+          cheapestPrice,
+        },
+        {
+          withCredentials: true,
+        }
+      );
+    } catch (error) {
+      console.log(error.message);
+    }
+    navigate("/handle-hotel");
   };
 
   return (
@@ -114,7 +119,9 @@ const UpdateHotel = () => {
               value={type}
               onChange={handleType}
             >
-              <option value="" disabled>Please select your type</option>
+              <option value="" disabled>
+                Please select your type
+              </option>
               <option value="hotel">Hotel</option>
               <option value="apartment">Apartment</option>
               <option value="villa">Villa</option>

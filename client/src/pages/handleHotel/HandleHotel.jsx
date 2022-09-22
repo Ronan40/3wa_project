@@ -14,6 +14,8 @@ const HandleHotel = () => {
 
   const navigate = useNavigate();
 
+  // Delete an hotel 
+
   const removeItem = async (id) => {
     try {
       await axios.delete(`http://localhost:8800/api/hotels/${id}`, {
@@ -25,6 +27,8 @@ const HandleHotel = () => {
       alert(error);
     }
   };
+
+  // Navigate to the update page hotel
 
   const navigateToUpdate = (id) => {
     navigate(`/update-hotel/${id}`);

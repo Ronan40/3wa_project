@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext.js";
 import "./login.css";
 
-const Login = ({page}) => {
+const Login = ({ page }) => {
   const [credentials, setCredentials] = useState({
     username: undefined,
     password: undefined,
@@ -12,9 +12,13 @@ const Login = ({page}) => {
 
   const { loading, error, dispatch } = useContext(AuthContext);
 
+  // Handle credentials change
+
   const handleChange = (e) => {
     setCredentials((prev) => ({ ...prev, [e.target.id]: e.target.value }));
   };
+
+  // Use AuthContext to login
 
   const handleClick = async (e) => {
     e.preventDefault();
@@ -22,12 +26,12 @@ const Login = ({page}) => {
     try {
       const res = await axios.post("/auth/login", credentials);
       dispatch({ type: "LOGIN_SUCCESS", payload: res.data.details });
-      if (page === 'create'){
+      if (page === "create") {
         navigate("/create-hotel");
-      } else if (page === 'delete'){
-        navigate('/handle-hotel')
+      } else if (page === "delete") {
+        navigate("/handle-hotel");
       } else {
-        navigate('/')
+        navigate("/");
       }
     } catch (err) {
       dispatch({ type: "LOGIN_FAILURE", payload: err.response.data });
@@ -35,6 +39,8 @@ const Login = ({page}) => {
   };
 
   const navigate = useNavigate();
+
+  // Navigate to register page
 
   const handleToRegister = () => {
     navigate("/register");

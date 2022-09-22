@@ -1,6 +1,8 @@
 import Hotel from "../models/Hotel.js";
 import Room from "../models/Room.js";
 
+// Create a hotel
+
 export const createHotel = async (req, res, next) => {
   const newHotel = new Hotel(req.body);
 
@@ -11,6 +13,9 @@ export const createHotel = async (req, res, next) => {
     next(error);
   }
 };
+
+// Update a hotel
+
 export const updateHotel = async (req, res, next) => {
   try {
     const updatedHotel = await Hotel.findByIdAndUpdate(
@@ -23,6 +28,9 @@ export const updateHotel = async (req, res, next) => {
     next(error);
   }
 };
+
+// Delete a hotel
+
 export const deleteHotel = async (req, res, next) => {
   try {
     await Hotel.findByIdAndDelete(req.params.id);
@@ -31,6 +39,9 @@ export const deleteHotel = async (req, res, next) => {
     next(error);
   }
 };
+
+// Get a hotel
+
 export const getHotel = async (req, res, next) => {
   try {
     const hotel = await Hotel.findById(req.params.id);
@@ -39,6 +50,9 @@ export const getHotel = async (req, res, next) => {
     next(error);
   }
 };
+
+// Get all hotel
+
 export const getAllHotel = async (req, res, next) => {
   const { min, max, ...others } = req.query;
   try {
@@ -51,6 +65,9 @@ export const getAllHotel = async (req, res, next) => {
     next(error);
   }
 };
+
+// Get hotel by type
+
 export const countByType = async (req, res, next) => {
   try {
     const hotelCount = await Hotel.countDocuments({ type: "hotel" });
@@ -71,6 +88,8 @@ export const countByType = async (req, res, next) => {
   }
 };
 
+// Get hotel by city
+
 export const countByCity = async (req, res, next) => {
   const cities = req.query.cities.split(",");
   try {
@@ -84,6 +103,9 @@ export const countByCity = async (req, res, next) => {
     next(err);
   }
 };
+
+
+// Get hotel by rooms
 
 export const getHotelRooms = async (req, res, next) => {
   try {

@@ -8,12 +8,17 @@ const Navbar = () => {
   const navigate = useNavigate();
   const { user, dispatch } = useContext(AuthContext);
 
+  // Use AuthContext to logout
   const handleClick = () => {
     dispatch({ type: "LOGOUT" });
   };
+
+  // Navigate to login page
   const handleToLogin = () => {
     navigate("/login");
   };
+
+   // Navigate to register page
   const handleToRegister = () => {
     navigate("/register");
   };
